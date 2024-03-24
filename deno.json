@@ -1,8 +1,6 @@
 {
   "lock": false,
-  "scripts": {
-    "mono": "deno run -A monodeno.ts"
-  },
+  "scripts": { "mono": "deno run -A monodeno.ts" },
   "tasks": {
     "mono": "deno run -A jsr:@jurassicjs/monodeno",
     "check": "deno fmt --check && deno lint && deno check **/*.ts && deno check **/*.tsx",
@@ -13,22 +11,12 @@
     "preview": "deno run -A main.ts",
     "update": "deno run -A -r https://fresh.deno.dev/update ."
   },
-  "lint": {
-    "rules": {
-      "tags": [
-        "fresh",
-        "recommended"
-      ]
-    }
-  },
-  "workspaces": [
-    "apps/web",
-    "apps/docs"
-  ],
-  "exclude": [
-    "**/_fresh/*"
-  ],
+  "lint": { "rules": { "tags": ["fresh", "recommended"] } },
+  "workspaces": ["app/web", "apps/docs"],
+  "exclude": ["**/_fresh/*"],
   "imports": {
+    "@jurassicjs/ui": "./packages/ui/mod.ts",
+    "@jurassicjs/roar": "./packages/roar/mod.ts",
     "$fresh/": "https://deno.land/x/fresh@1.6.8/",
     "$std/": "https://deno.land/std@0.216.0/",
     "@crayon/color-support": "jsr:@crayon/color-support@^2.0.0",
@@ -41,9 +29,6 @@
     "tailwindcss/": "npm:/tailwindcss@3.4.1/",
     "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js"
   },
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "jsxImportSource": "preact"
-  },
+  "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
   "nodeModulesDir": true
 }
