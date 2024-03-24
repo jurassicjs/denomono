@@ -10,4 +10,5 @@ import { start } from "$fresh/server.ts";
 import manifest from "./fresh.gen.ts";
 import config from "./fresh.config.ts";
 
+console.log("starting docs. . .");
 await start(manifest, config);

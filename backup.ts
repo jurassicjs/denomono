@@ -1,30 +1,24 @@
 
-// Read the deno.json file
 import denoConfig from "./deno.json" with { type: "json" };
 import { parseArgs } from "https://deno.land/std@0.220.1/cli/parse_args.ts";
 const parsedArgs = parseArgs(Deno.args);
-
-console.log('denoConfig:-->',denoConfig);
-// Extract the workspaces
 const workspaces = denoConfig.workspaces;
+const command = parsedArgs._[0] as string;
 
-// Get the command to run from the command line arguments
-const command = parsedArgs;
-
-console.log('command:-->',command);
 for (const workspace of workspaces) {
   console.log('workspace:-->',workspace);
-  const taskScriptPath = `./${workspace}/tasks/${command}.ts`;
-  console.log('taskScriptPath:-->',taskScriptPath);
+  const fullTaskScriptPath = `${workspace}/tasks/${command}.ts`;
 
-    console.log(taskScriptPath);
-    const p = new Deno.Command(Deno.execPath(),{
-      args: ["task", "greet"],
-      cwd: taskScriptPath,
+
+  console.log('fullTaskScriptPath:-->',fullTaskScriptPath);
+
+    const denoCommand = new Deno.Command(Deno.execPath(),{
+      args: ["task", command],
+      cwd: workspace,
       stderr: "piped",
     });
 
-    const { code, stdout, stderr } = p.outputSync();
+    const { code, stdout, stderr } = await denoCommand.output();
     // console.assert(code === 0);
     if (code !== 0) {
       const stderrString = new TextDecoder().decode(stderr);

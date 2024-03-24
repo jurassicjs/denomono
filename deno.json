@@ -1,7 +1,10 @@
 {
   "lock": false,
+  "scripts": {
+    "mono": "deno run -A monodeno.ts"
+  },
   "tasks": {
-    "greet": "deno run -A monotask.ts",
+    "mono": "deno run -A monodeno.ts",
     "check": "deno fmt --check && deno lint && deno check **/*.ts && deno check **/*.tsx",
     "cli": "echo \"import '\\$fresh/src/dev/cli.ts'\" | deno run --unstable -A -",
     "manifest": "deno task cli manifest $(pwd)",
@@ -28,6 +31,7 @@
   "imports": {
     "$fresh/": "https://deno.land/x/fresh@1.6.8/",
     "$std/": "https://deno.land/std@0.216.0/",
+    "@crayon/color-support": "jsr:@crayon/color-support@^2.0.0",
     "@jurassicjs/monodeno": "jsr:@jurassicjs/monodeno@^0.0.1",
     "@preact/signals": "https://esm.sh/*@preact/signals@1.2.2",
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1",
