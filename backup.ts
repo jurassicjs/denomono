@@ -3,6 +3,12 @@ import denoConfig from "./deno.json" with { type: "json" };
 import { parseArgs } from "https://deno.land/std@0.220.1/cli/parse_args.ts";
 const parsedArgs = parseArgs(Deno.args);
 const workspaces = denoConfig.workspaces;
+
+if (workspaces.length === 0) {
+  console.error("No workspaces found in deno.json");
+  Deno.exit(1);
+}
+
 const command = parsedArgs._[0] as string;
 
 for (const workspace of workspaces) {

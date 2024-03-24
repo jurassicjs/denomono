@@ -4,7 +4,7 @@
     "mono": "deno run -A monodeno.ts"
   },
   "tasks": {
-    "mono": "deno run -A jsr:@jurassicjs/monodeno ",
+    "mono": "deno run -A /Users/richardrohrig/code/me/deno-projects/monodeno/mod.ts",
     "check": "deno fmt --check && deno lint && deno check **/*.ts && deno check **/*.tsx",
     "cli": "echo \"import '\\$fresh/src/dev/cli.ts'\" | deno run --unstable -A -",
     "manifest": "deno task cli manifest $(pwd)",
