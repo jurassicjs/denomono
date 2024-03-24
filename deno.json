@@ -12,7 +12,7 @@
     "update": "deno run -A -r https://fresh.deno.dev/update ."
   },
   "lint": { "rules": { "tags": ["fresh", "recommended"] } },
-  "workspaces": ["app/web", "apps/docs"],
+  "workspaces": ["apps/web", "apps/docs"],
   "exclude": ["**/_fresh/*"],
   "imports": {
     "@jurassicjs/ui": "./packages/ui/mod.ts",
