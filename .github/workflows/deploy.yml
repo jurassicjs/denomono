@@ -29,6 +29,6 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "richardrohr-denomono-15"
-          entrypoint: "./apps/web/main.ts"
+          project: "jurassic-mono-docs"
+          entrypoint: "./apps/docs/main.ts"
           root: "."
