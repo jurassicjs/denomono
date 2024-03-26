@@ -1,5 +1,13 @@
 import { type PageProps } from "$fresh/server.ts";
+import { Header } from "@jurassicjs/ui";
 export default function App({ Component }: PageProps) {
+
+  const menus = [
+    { name: "Home", href: "/" },
+    { name: "Getting Started", href: "/components" },
+    { name: "Reference", href: "/docs" },
+  ];
+
   return (
     <html>
       <head>
@@ -9,6 +17,7 @@ export default function App({ Component }: PageProps) {
         <link rel="stylesheet" href="/styles.css" />
       </head>
       <body>
+        <Header active="/" menus={menus} />
         <Component />
       </body>
     </html>

@@ -1,1 +1,2 @@
-export { Button } from './src/Button.tsx'
+export { Button } from './components/Button.tsx'
+export * from './components/Header.tsx'
