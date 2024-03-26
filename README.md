@@ -36,11 +36,13 @@ For example, let's build the projects
 deno task mono build
 ```
 
-Enjoy Denomono! Happy coding! 🦕
-
 Demo Sites:
 
 https://jurassic-mono-web.deno.dev/
 ![web](./public/web.png)
 
 https://jurassic-mono-docs.deno.dev/
+![docs](./public/docs.png)
+
+
+Enjoy Denomono! Happy coding! 🦕
