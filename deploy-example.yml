@@ -26,14 +26,14 @@ jobs:
       - name: Build step
         run: "deno task mono build"
 
-      - name: Upload apps/web to Deno Deploy
+      - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
           project: "richardrohr-denomono-15"
           entrypoint: "./apps/web/main.ts"
           root: "."
 
-      - name: Upload apps/docs to Deno Deploy
+      - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
           project: "jurassic-mono-docs"
