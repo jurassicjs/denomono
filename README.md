@@ -1,6 +1,6 @@
 ![top](./public/top.png)
 
-# Denomono
+# Denomono 🦕
 
 Denomono is the code you get when you run
 ```bash
@@ -36,4 +36,11 @@ For example, let's build the projects
 deno task mono build
 ```
 
-Enjoy Denomono! Happy coding!
+Enjoy Denomono! Happy coding! 🦕
+
+Demo Sites:
+
+https://jurassic-mono-web.deno.dev/
+![web](./public/web.png)
+
+https://jurassic-mono-docs.deno.dev/
